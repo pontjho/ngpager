@@ -1,0 +1,26 @@
+{
+  "name": "ng-pager",
+  "version": "0.0.0",
+  "authors": [
+    "Pontjho Mokkhonoana <pontjho@gmail.com>"
+  ],
+  "description": "Paging control",
+  "main": "pager.js",
+  "keywords": [
+    "pager",
+    "angularjs"
+  ],
+  "license": "APACHE",
+  "homepage": "github.com/pontjho/ngpager",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.2.21",
+    "bootstrap": "~3.2.0"
+  }
+}

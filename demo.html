@@ -1,0 +1,20 @@
+<html ng-app="TestApp">
+	<head>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" ></link>
+	</head>
+	<body>
+		<span>Current page<input type="number" ng-model="currentPage" /></span>
+		<span>Total pages<input type="number" ng-model="totalPages" /></span>
+		<span>Max pages<input type="number" ng-model="maxPagesToDisplay" /></span>
+		<div pager current-page="currentPage" total-pages="totalPages" max-pages-to-display="{{maxPagesToDisplay}}"></div>
+		<span>Displaying {{maxPagesToDisplay}} with page {{currentPage}} of {{totalPages}}</span>
+
+		<script src="bower_components/angularjs/angular.js"></script>
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="pager.js"></script>
+		<script>
+			angular.module('TestApp', ['Pager']);
+		</script>
+	</body>
+</html>
