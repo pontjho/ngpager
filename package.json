@@ -1,0 +1,22 @@
+{
+  "author": "Pontjho Mokhonoana",
+  "name": "ng-pager",
+  "version": "1.0.0",
+  "homepage": "https://www.pontjho.com",
+  "licenses": {
+    "type": "MIT",
+    "url": "https://raw.github.com/joshdmiller/ng-boilerplate/master/LICENSE"
+  },
+  "bugs": "https://github.com/pontjho/ngpager/issues",
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.3.8",
+    "gulp": "^3.8.7",
+    "gulp-angular-templatecache": "^1.2.1",
+    "gulp-concat": "^2.3.4",
+    "gulp-jshint": "^1.8.3",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.1"
+  }
+}

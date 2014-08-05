@@ -1,7 +1,7 @@
 ﻿(function() {
     'use strict';
 
-    angular.module('Pager', [])
+    angular.module('Pager', ['templates'])
     .directive('pager', [function () {
         var definition = {
             restrict: 'A',
