@@ -40,17 +40,13 @@
                 {
                     var pages = [];
                     currentPage = parseInt(currentPage);
-                    var pagesLeft = totalPages - currentPage;
-                    var pagesAfterCurrent = Math.min(totalPages - currentPage, maxPages);
-                    var pagesBeforeCurrent = Math.max(0, maxPages - pagesAfterCurrent);
-
-                    var start = currentPage - pagesBeforeCurrent;
-                    var end = currentPage + pagesAfterCurrent;
-
-                    scope.hasPreBuffer = start !== 0;
-                    scope.hasPostBuffer = end !== totalPages;
-
-                    for(var i = start; i < end; i++)
+                    var prelimStart = currentPage - Math.floor(maxPages / 2);
+                    var adjustedStart = Math.max(prelimStart, 0);
+                    var prelimEnd = currentPage + Math.ceil(maxPages / 2) + (adjustedStart - prelimStart);
+                    var adjustedEnd = Math.min(prelimEnd, totalPages);
+                    var finalStart = Math.max(0, adjustedStart - (prelimEnd - adjustedEnd));
+                    
+                    for(var i = finalStart; i < adjustedEnd; i++)
                     {
                         pages.push({pageNumber: i, isCurrent: i == currentPage });
                     }
