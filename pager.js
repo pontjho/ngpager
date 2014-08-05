@@ -13,8 +13,7 @@
                 scope.changed = function (newPage) {
                     if(!newPage)
                         return;
-                    
-                    console.log(newPage);
+
                     scope.pageChanged({ pageNum: newPage });
                 };
 
