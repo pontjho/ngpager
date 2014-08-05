@@ -3,7 +3,7 @@
     <li ng-class="{disabled: !hasPreviousPage}"><a href="" ng-click="changed(currentPage - 1)">&laquo;</a></li>
     <li ng-show="hasPreBuffer" ng-class="{disabled: true}"><a href="">...</a></li>
     <li ng-class="{active: page.isCurrent}" ng-repeat="page in pages">
-        <a href="" ng-click="changed(page.number)">{{page.pageNumber + 1}}</a>
+        <a href="" ng-click="changed(page.pageNumber)">{{page.pageNumber}}</a>
     </li>
     <li ng-show="hasPostBuffer" ng-class="{disabled: true}"><a href="">...</a></li>
     <li ng-class="{disabled: !hasNextPage}"><a href="" ng-click="changed(currentPage + 1)">&raquo;</a></li>
