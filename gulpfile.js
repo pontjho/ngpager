@@ -24,7 +24,7 @@ gulp.task('scripts', ['templates'], function() {
 
 gulp.task('templates', function () {
     gulp.src(['*.tpl.html'])
-        .pipe(templateCache('templates.js', { standalone: true }))
+        .pipe(templateCache('templates.js', { standalone: true, module: 'ngpagerTemplates' }))
         .pipe(gulp.dest('.'));
 });
 

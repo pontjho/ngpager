@@ -18,7 +18,7 @@
 		<script>
 			angular.module('TestApp', ['Pager'])
 			.controller('PagingController', function($scope) {
-				$scope.paged = function(newPage) {console.log(newPage); $scope.currentPage = newPage;};
+				$scope.paged = function(newPage) {$scope.currentPage = newPage;};
 				$scope.currentPage = 0;
 				$scope.totalPages = 10;
 				$scope.maxPagesToDisplay = 5;
