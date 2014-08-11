@@ -3,7 +3,9 @@
 
     describe('Pagination ', function () {
 
-        it('should create an unordered list item for each page', function () {
+        
+
+        /*it('should create an unordered list item for each page', function () {
 
             inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
@@ -54,6 +56,6 @@
 
                 expect(newPageNum).toEqual(3);
             });
-        });
+        });*/
     });
 });
