@@ -12,7 +12,11 @@
             link: function (scope, iElement, iAttrs) {
 
                 scope.changed = function (newPage) {
-                    if(!newPage)
+                    console.log(newPage, 'ya');
+                    if(!newPage && newPage !== 0)
+                        return;
+
+                    if(newPage < 0 || newPage >= scope.totalPages)
                         return;
 
                     scope.pageChanged({ pageNum: newPage });
@@ -41,6 +45,7 @@
                 {
                     var pages = [];
                     currentPage = parseInt(currentPage);
+                    scope.currentPage = currentPage;
                     var prelimStart = currentPage - Math.floor(maxPages / 2);
                     var adjustedStart = Math.max(prelimStart, 0);
                     var prelimEnd = currentPage + Math.ceil(maxPages / 2) + (adjustedStart - prelimStart);
@@ -54,6 +59,8 @@
                     scope.pages = pages;
                     scope.hasPreBuffer = finalStart > 0;
                     scope.hasPostBuffer = adjustedEnd < totalPages;
+                    scope.hasPreviousPage = currentPage > 0;
+                    scope.hasNextPage = currentPage < totalPages;
                 }
             }
         };
