@@ -51,6 +51,8 @@
                         pages.push({pageNumber: i, isCurrent: i == currentPage });
                     }
                     scope.pages = pages;
+                    scope.hasPreBuffer = finalStart > 0;
+                    scope.hasPostBuffer = adjustedEnd < totalPages;
                 }
             }
         };
