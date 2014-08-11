@@ -1,6 +1,6 @@
 {
   "name": "ngpager",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "authors": [
     "Pontjho Mokkhonoana <pontjho@gmail.com>"
   ],
@@ -8,7 +8,9 @@
   "main": "pager.js",
   "keywords": [
     "pager",
-    "angularjs"
+    "angularjs",
+    "pagination",
+    "paginate"
   ],
   "license": "APACHE",
   "homepage": "github.com/pontjho/ngpager",
@@ -17,7 +19,16 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "LICENSE",
+    "karma.conf.js",
+    "gulpfile.js",
+    "README.md",
+    ".gitignore",
+    "bower.json",
+    "demo.html",
+    "*Spec.js",
+    "package.json"
   ],
   "dependencies": {
     "angularjs": "~1.2.21"
