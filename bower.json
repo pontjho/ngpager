@@ -20,7 +20,9 @@
     "tests"
   ],
   "dependencies": {
-    "angularjs": "~1.2.21",
+    "angularjs": "~1.2.21"
+  },
+  "dev-dependencies": {
     "bootstrap": "~3.2.0"
   }
 }

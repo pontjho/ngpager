@@ -1,7 +1,7 @@
-﻿describe('Pager', function () {
-    beforeEach(module('ClubMiles'));
+﻿describe('NgPager', function () {
+    beforeEach(module('NgPager'));
 
-    describe('Pager ', function () {
+    describe('Pagination ', function () {
 
         it('should create an unordered list item for each page', function () {
 
@@ -17,7 +17,7 @@
                 };
                 scope.pageChanged = function (npn) { newPageNum = npn; };
 
-                var element = $compile('<div pager="pager" page-changed="pageChanged(pageNum)">{{pager}}1</div>')(scope);
+                var element = $compile('<div ng-pager="pager" page-changed="pageChanged(pageNum)">{{pager}}1</div>')(scope);
 
                 scope.$digest();
 

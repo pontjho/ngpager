@@ -1,4 +1,4 @@
-var jsPath = ['templates.js', 'pager.js'];
+var jsPath = ['templates.js', 'ngpager.js'];
 
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
@@ -24,7 +24,7 @@ gulp.task('scripts', ['templates'], function() {
 
 gulp.task('templates', function () {
     gulp.src(['*.tpl.html'])
-        .pipe(templateCache('templates.js', { standalone: true, module: 'ngpagerTemplates' }))
+        .pipe(templateCache('templates.js', { standalone: true, module: 'ngPagerTemplates' }))
         .pipe(gulp.dest('.'));
 });
 

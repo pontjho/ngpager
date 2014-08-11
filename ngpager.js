@@ -1,13 +1,13 @@
 ﻿(function() {
     'use strict';
 
-    angular.module('Pager', ['ngpagerTemplates'])
-    .directive('pager', [function () {
+    angular.module('NgPager', ['ngPagerTemplates'])
+    .directive('ngPager', [function () {
         var definition = {
             restrict: 'A',
             scope: { currentPage: '=', totalPages: '=', maxPagesToDisplay: '@', pageChanged: '&' },
             replace: true,
-            templateUrl: 'pager.tpl.html',
+            templateUrl: 'ngPager.tpl.html',
 
             link: function (scope, iElement, iAttrs) {
                 scope.changed = function (newPage) {
