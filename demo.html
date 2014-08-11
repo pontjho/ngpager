@@ -6,7 +6,7 @@
 		<span>Current page<input type="number" ng-model="currentPage" min="0" /></span>
 		<span>Total pages<input type="number" ng-model="totalPages" min="1" /></span>
 		<span>Max pages<input type="number" ng-model="maxPagesToDisplay" min="2" /></span>
-		<div ng-pager current-page="currentPage" total-pages="totalPages" max-pages-to-display="{{maxPagesToDisplay}}" page-changed="paged(pageNum)"></div>
+		<div ng-pager current-page="{{currentPage}}" total-pages="{{totalPages}}" max-pages-to-display="{{maxPagesToDisplay}}" page-changed="paged(pageNum)"></div>
 		<span>Displaying {{maxPagesToDisplay}} with page {{currentPage}} of {{totalPages}}</span>
 
 		<script src="bower_components/angularjs/angular.js"></script>

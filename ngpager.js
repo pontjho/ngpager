@@ -5,11 +5,12 @@
     .directive('ngPager', [function () {
         var definition = {
             restrict: 'A',
-            scope: { currentPage: '=', totalPages: '=', maxPagesToDisplay: '@', pageChanged: '&' },
+            scope: { currentPage: '@', totalPages: '@', maxPagesToDisplay: '@', pageChanged: '&' },
             replace: true,
             templateUrl: 'ngPager.tpl.html',
 
             link: function (scope, iElement, iAttrs) {
+
                 scope.changed = function (newPage) {
                     if(!newPage)
                         return;
