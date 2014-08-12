@@ -1,9 +1,6 @@
 # NgPager
-**ng-pager** is a pagination directive for your angular application. The directive is only dependent on AngularJs and has no dependencies on JQuery. By default you can use Bootstrap for the styling or use your own stylesheet.
+**ng-pager** is a pagination directive for your angular application. The directive is only dependent on AngularJs and has no dependencies on JQuery. For styling, you may use the supplied stylesheet, bootstrap or your own stylesheet.
 
-## Todo
-
-* Generate a Bootstrap derived stylesheet with only paging specific style elements.
 
 ## Demo
 
