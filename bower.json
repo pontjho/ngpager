@@ -1,6 +1,6 @@
 {
   "name": "ngpager",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "authors": [
     "Pontjho Mokkhonoana <pontjho@gmail.com>"
   ],
@@ -31,7 +31,7 @@
     "package.json"
   ],
   "dependencies": {
-    "angularjs": "~1.2.21"
+    "angularjs": ">= 1.2.21"
   },
   "dev-dependencies": {
     "bootstrap": "~3.2.0"
