@@ -12,14 +12,14 @@
 
 ## Installation
 
-Grab the latest [release](https://github.com/pontjho/ngpager) and add the `javascript` file:
+Grab the latest [release](https://github.com/pontjho/ngpager) or use
+bower install --save ngpager
+
+Add the `javascript` file:
 
 ```html
-<link rel="stylesheet" type="text/css" href="ngpager.css" />
 <script type="text/javascript" src="ngpager.min.js"></script>
 ```
-
-If you want animations, doesn't forget to add `angular-animate`.
 
 Then add `NgPager` to your module's dependencies:
 
@@ -32,6 +32,6 @@ angular.module('app', ['NgPager'])
 ### Basic usage
 
 ```html
-		<div ng-pager current-page="{{currentPage}}" total-pages="{{totalPages}}" max-pages-to-display="{{maxPagesToDisplay}}" page-changed="paged(pageNum)"></div>
+<div ng-pager current-page="{{currentPage}}" total-pages="{{totalPages}}" max-pages-to-display="{{maxPagesToDisplay}}" page-changed="paged(pageNum)"></div>
 ```
 Add the ng-pager directive to any div element and specify the current page, total pages and maximum pages to display. Also include a function to handle the page changed event in your controller. Note that the current page will only update when you update it in your model.
