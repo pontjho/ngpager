@@ -5,6 +5,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
+    less = require('gulp-less'),
+    minifycss = require('gulp-minify-css'),
     templateCache = require('gulp-angular-templatecache');
 
 // Lint Task
@@ -28,4 +30,12 @@ gulp.task('templates', function () {
         .pipe(gulp.dest('.'));
 });
 
-gulp.task('default', ['lint', 'scripts']);
+gulp.task('less', function () {
+    return gulp.src('style.less')
+        .pipe(less())
+        .pipe(minifycss())
+        .pipe(concat('ngpager.min.css'))
+        .pipe(gulp.dest('.'));
+});
+
+gulp.task('default', ['lint', 'scripts', 'less']);
