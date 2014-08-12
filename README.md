@@ -7,7 +7,7 @@
 
 ## Demo
 
-[Demo](http://github.io/pontjho/ngpager/)
+[Demo](http://pontjho.github.io/ngpager/demo.html)
 
 ## Installation
 
