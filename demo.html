@@ -1,0 +1,24 @@
+<html ng-app="TestApp">
+	<head>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	</head>
+	<body ng-controller="PagingController">
+		<span>Current page<input type="number" ng-model="currentPage" min="0" /></span>
+		<span>Total pages<input type="number" ng-model="totalPages" min="1" /></span>
+		<span>Max pages<input type="number" ng-model="maxPagesToDisplay" min="2" /></span>
+		<div ng-pager current-page="{{currentPage}}" total-pages="{{totalPages}}" max-pages-to-display="{{maxPagesToDisplay}}" page-changed="paged(pageNum)"></div>
+		<span>Displaying {{maxPagesToDisplay}} with page {{currentPage}} of {{totalPages}}</span>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
+		<script src="javascripts/ngpager.min.js"></script>
+		<script>
+			angular.module('TestApp', ['NgPager'])
+			.controller('PagingController', function($scope) {
+				$scope.paged = function(newPage) {$scope.currentPage = newPage;};
+				$scope.currentPage = 0;
+				$scope.totalPages = 10;
+				$scope.maxPagesToDisplay = 5;
+			});
+		</script>
+	</body>
+</html>
