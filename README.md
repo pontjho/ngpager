@@ -4,7 +4,6 @@
 ## Todo
 
 * Generate a Bootstrap derived stylesheet with only paging specific style elements.
-* Add a live demo
 
 ## Demo
 
