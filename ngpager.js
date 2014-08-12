@@ -7,7 +7,7 @@
             restrict: 'A',
             scope: { currentPage: '@', totalPages: '@', maxPagesToDisplay: '@', pageChanged: '&' },
             replace: true,
-            templateUrl: 'ngPager.tpl.html',
+            templateUrl: 'ngpager.tpl.html',
 
             link: function (scope, iElement, iAttrs) {
 
