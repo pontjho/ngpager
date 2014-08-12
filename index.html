@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Ngpager : Pagination directive for your angular application">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Ngpager</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pontjho/ngpager">View on GitHub</a>
+
+          <h1 id="project_title">Ngpager</h1>
+          <h2 id="project_tagline">Pagination directive for your angular application</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pontjho/ngpager/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pontjho/ngpager/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="ngpager" class="anchor" href="#ngpager"><span class="octicon octicon-link"></span></a>NgPager</h1>
+
+<p><strong>ng-pager</strong> is a pagination directive for your angular application. The directive is only dependent on AngularJs and has no dependencies on JQuery. By default you can use Bootstrap for the styling or use your own stylesheet.</p>
+
+<h2>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>Todo</h2>
+
+<ul>
+<li>Generate a Bootstrap derived stylesheet with only paging specific style elements.</li>
+<li>Add a live demo</li>
+</ul><h2>
+<a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p><a href="http://github.io/pontjho/ngpager/">Demo</a></p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Grab the latest <a href="https://github.com/pontjho/ngpager">release</a> or use
+bower install --save ngpager</p>
+
+<p>Add the <code>javascript</code> file:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"ngpager.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>Then add <code>NgPager</code> to your module's dependencies:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'app'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'NgPager'</span><span class="p">])</span>
+</pre></div>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a name="basic-usage" class="anchor" href="#basic-usage"><span class="octicon octicon-link"></span></a>Basic usage</h3>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">ng-pager</span> <span class="na">current-page=</span><span class="s">"{{currentPage}}"</span> <span class="na">total-pages=</span><span class="s">"{{totalPages}}"</span> <span class="na">max-pages-to-display=</span><span class="s">"{{maxPagesToDisplay}}"</span> <span class="na">page-changed=</span><span class="s">"paged(pageNum)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+
+<p>Add the ng-pager directive to any div element and specify the current page, total pages and maximum pages to display. Also include a function to handle the page changed event in your controller. Note that the current page will only update when you update it in your model.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Ngpager maintained by <a href="https://github.com/pontjho">pontjho</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
