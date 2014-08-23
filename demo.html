@@ -13,9 +13,9 @@
 		<script src="ngpager.min.js"></script>
 		<script>
 			angular.module('TestApp', ['NgPager'])
-			//.start(function(PagerConfig) {PagerConfig.offset = -1; })
+			.config(function() {}).run(function(PagerConfig) { PagerConfig.setBase1(); })
 			.controller('PagingController', function($scope, PagerConfig) {
-				PagerConfig.offset = -1;
+				
 				$scope.paged = function(newPage) {
 					console.log('Paged to ', newPage)
 					$scope.currentPage = newPage;

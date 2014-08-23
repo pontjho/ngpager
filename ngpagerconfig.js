@@ -1,4 +1,8 @@
 angular.module('PagerConfig', []).factory('PagerConfig', [function() {
-	var config = {offset: -1};
+	var offset = 0;
+	var config = {
+		setBase1: function() {offset = -1;}
+	};
+	Object.defineProperty(config, "offset", { get: function() { return offset; }});
 	return config;
 }]);
