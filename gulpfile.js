@@ -1,4 +1,4 @@
-var jsPath = ['templates.js', 'ngpager.js'];
+var jsPath = ['templates.js', 'ngpagerconfig.js', 'ngpager.js'];
 
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),

@@ -2,7 +2,7 @@
   "name": "ngpager",
   "version": "1.0.0",
   "authors": [
-    "Pontjho Mokkhonoana <pontjho@gmail.com>"
+    "Pontjho Mokhonoana <pontjho@gmail.com>"
   ],
   "description": "Paging control",
   "main": "pager.js",

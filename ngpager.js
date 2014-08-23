@@ -1,8 +1,8 @@
 ﻿(function() {
     'use strict';
 
-    angular.module('NgPager', ['ngPagerTemplates'])
-    .directive('ngPager', [function () {
+    angular.module('NgPager', ['ngPagerTemplates', 'PagerConfig'])
+    .directive('ngPager', ['PagerConfig', function (PagerConfig) {
         var definition = {
             restrict: 'A',
             scope: { currentPage: '@', totalPages: '@', maxPagesToDisplay: '@', pageChanged: '&' },
@@ -12,14 +12,13 @@
             link: function (scope, iElement, iAttrs) {
 
                 scope.changed = function (newPage) {
-                    console.log(newPage, 'ya');
                     if(!newPage && newPage !== 0)
                         return;
 
                     if(newPage < 0 || newPage >= scope.totalPages)
                         return;
 
-                    scope.pageChanged({ pageNum: newPage });
+                    scope.pageChanged({ pageNum: newPage - PagerConfig.offset });
                 };
 
                 scope.$watch('currentPage', updateCurrentPage);
@@ -45,22 +44,27 @@
                 {
                     var pages = [];
                     currentPage = parseInt(currentPage);
-                    scope.currentPage = currentPage;
-                    var prelimStart = currentPage - Math.floor(maxPages / 2);
-                    var adjustedStart = Math.max(prelimStart, 0);
-                    var prelimEnd = currentPage + Math.ceil(maxPages / 2) + (adjustedStart - prelimStart);
-                    var adjustedEnd = Math.min(prelimEnd, totalPages);
-                    var finalStart = Math.max(0, adjustedStart - (prelimEnd - adjustedEnd));
+                    var selectedPage = currentPage + PagerConfig.offset;
+                    var firstPage = -PagerConfig.offset;
+                    var lastPage = totalPages-PagerConfig.offset;
+
+                    scope.selectedPage = selectedPage;
+                    var prelimStart = selectedPage - Math.floor(maxPages / 2);
+                    var adjustedStart = Math.max(prelimStart, firstPage);
+                    var prelimEnd = selectedPage + Math.ceil(maxPages / 2) + (adjustedStart - prelimStart);
+                    var adjustedEnd = Math.min(prelimEnd, lastPage);
+                    var finalStart = Math.max(firstPage, adjustedStart - (prelimEnd - adjustedEnd));
                     
                     for(var i = finalStart; i < adjustedEnd; i++)
                     {
-                        pages.push({pageNumber: i, isCurrent: i == currentPage });
+                        var pageNumber = i + PagerConfig.offset;
+                        pages.push({pageNumber: pageNumber, isCurrent: pageNumber == selectedPage });
                     }
                     scope.pages = pages;
-                    scope.hasPreBuffer = finalStart > 0;
-                    scope.hasPostBuffer = adjustedEnd < totalPages;
-                    scope.hasPreviousPage = currentPage > 0;
-                    scope.hasNextPage = currentPage < totalPages;
+                    scope.hasPreBuffer = finalStart > firstPage;
+                    scope.hasPostBuffer = adjustedEnd < lastPage;
+                    scope.hasPreviousPage = selectedPage > 0;
+                    scope.hasNextPage = selectedPage < totalPages - 1;
                 }
             }
         };
