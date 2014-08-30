@@ -11,6 +11,7 @@
 
             link: function (scope, iElement, iAttrs) {
 
+                scope.showJumpControls = PagerConfig.areJumpControlsEnabled;
                 scope.changed = function (newPage) {
                     if(!newPage && newPage !== 0)
                         return;
@@ -61,10 +62,13 @@
                         pages.push({pageNumber: pageNumber, isCurrent: pageNumber == selectedPage });
                     }
                     scope.pages = pages;
-                    scope.hasPreBuffer = finalStart > firstPage;
-                    scope.hasPostBuffer = adjustedEnd < lastPage;
+                    scope.displayFirstPage = finalStart > firstPage;
+                    scope.hasPreBuffer = finalStart > (firstPage + 1);
+                    scope.hasPostBuffer = adjustedEnd < (lastPage - 1);
+                    scope.displayLastPage = adjustedEnd < lastPage;
                     scope.hasPreviousPage = selectedPage > 0;
                     scope.hasNextPage = selectedPage < totalPages - 1;
+                    scope.totalPages = totalPages;
                 }
             }
         };
