@@ -5,7 +5,7 @@
     .directive('ngPager', ['PagerConfig', function (PagerConfig) {
         var definition = {
             restrict: 'A',
-            scope: { currentPage: '@', totalPages: '@', maxPagesToDisplay: '@', pageChanged: '&' },
+            scope: { currentPage: '@', totalPages: '@', maxPagesToDisplay: '@', pageChanged: '&', enableJumpControls: '@' },
             replace: true,
             templateUrl: 'ngpager.tpl.html',
 
@@ -20,6 +20,8 @@
 
                     scope.pageChanged({ pageNum: newPage - PagerConfig.offset });
                 };
+
+                var enableJumpControls = scope.enableJumpControls || PagerConfig.areJumpControlsEnabled;
 
                 scope.$watch('currentPage', updateCurrentPage);
                 scope.$watch('totalPages', updateTotalPages);
@@ -62,7 +64,7 @@
                     }
                     scope.pages = pages;
 
-                    if(PagerConfig.areJumpControlsEnabled)
+                    if(enableJumpControls)
                     {
                         scope.displayFirstPage = finalStart > firstPage;
                         scope.hasPreBuffer = finalStart > (firstPage + 1);
