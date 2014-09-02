@@ -9,7 +9,8 @@
 		<div ng-pager current-page="{{currentPage}}" 
 			 total-pages="{{totalPages}}" 
 			 page-changed="paged(pageNum)"
-			 >
+			 enable-jump-controls="true"
+			 max-pages-to-display="5">
 		</div>
 
 		<span>Displaying {{maxPagesToDisplay}} with page {{currentPage}} of {{totalPages}}</span>
@@ -22,7 +23,7 @@
 			.run(function(PagerConfig)
 			{ 
 				//PagerConfig.setBase1();
-				PagerConfig.enableJumpControls();
+				//PagerConfig.enableJumpControls();
 			})
 			.controller('PagingController', function($scope, PagerConfig) {
 				
